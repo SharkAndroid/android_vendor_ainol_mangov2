@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <groups>
+    <functions>
+        <function name = "bt" groups = "bt"/>
+        <function name = "csi" groups = "csi"/>
+        <function name = "gps" groups = "gps_rmii gps_i2s"/>
+        <function name = "i2c0" groups = "i2c0"/>
+        <function name = "i2c1" groups = "i2c1"/>
+        <function name = "i2c2" groups = "i2c2"/>
+        <function name = "jtag" groups = "jtag_ks jtag_sd0"/>
+        <function name = "key" groups = "key4x2"/>
+        <function name = "lcd0" groups = "lcd0"/>
+        <function name = "lvds" groups = "lvds"/>
+        <function name = "nand" groups = "nand"/>
+        <function name = "pcm0" groups = "pcm0"/>
+        <function name = "pwm" groups = "pwm01_ksin02 pwm2_ksout2 pwm123_ksin3out0out1"/>
+        <function name = "rmii" groups = "rmii"/>
+        <function name = "sd0" groups = "sd0"/>
+        <function name = "sd1" groups = "sd1"/>
+        <function name = "sd2" groups = "sd2"/>
+        <function name = "sens0" groups = "sens0"/>
+        <function name = "sens1" groups = "sens1"/>
+        <function name = "smii" groups = "smii"/>
+        <function name = "spi0" groups = "spi0"/>
+        <function name = "spi1" groups = "spi1"/>
+        <function name = "key" groups = "key4x2"/>
+        <function name = "uart0" groups = "uart0"/>
+        <function name = "uart2" groups = "uart2 uart2_sd0"/>
+        <function name = "uart3" groups = "uart3"/>
+        <function name = "uart4" groups = "uart4"/>
+        <function name = "uart5" groups = "uart5_sd0"/>
+    </functions>
+
+    <pinctrl_mapping>
+        <mapping function = "lvds" boot_enable = "true"/>
+        <mapping function = "spi1" boot_enable = "true"/>
+        <mapping function = "sens1" boot_enable = "true"/>
+        <mapping function = "pwm" group = "pwm01_ksin02" boot_enable = "true"/>
+        <mapping function = "pwm" group = "pwm2_ksout2" boot_enable = "true"/>
+        <mapping function = "pwm" group = "pwm123_ksin3out0out1" boot_enable = "true"/>
+        <mapping function = "uart2" />
+
+        <mapping function = "sd0" group = "sd0" dev_name = "asoc-mmc0.0" state_name = "sd0_host"/>
+        <mapping function = "uart5" group = "uart5_sd0" dev_name = "asoc-mmc0.0" state_name = "serial_port"/>
+
+        <mapping function = "sd1" group = "sd1" dev_name = "asoc-mmc1.0" state_name = "sd1_wifi"/>
+    </pinctrl_mapping>
+
 	<group name = "bt" pads = "0~11">
 		<mfp_cfg>
 			<register reg = "0" mask = "0xfff80000" value = "0x00000000"/>
@@ -215,49 +261,3 @@
 		</mfp_cfg>
 	</group>
 </groups>
-
-<functions>
-	<function name = "bt" groups = "bt"/>
-	<function name = "csi" groups = "csi"/>
-	<function name = "gps" groups = "gps_rmii gps_i2s"/>
-	<function name = "i2c0" groups = "i2c0"/>
-	<function name = "i2c1" groups = "i2c1"/>
-	<function name = "i2c2" groups = "i2c2"/>
-	<function name = "jtag" groups = "jtag_ks jtag_sd0"/>
-	<function name = "key" groups = "key4x2"/>
-	<function name = "lcd0" groups = "lcd0"/>
-	<function name = "lvds" groups = "lvds"/>
-	<function name = "nand" groups = "nand"/>
-	<function name = "pcm0" groups = "pcm0"/>
-	<function name = "pwm" groups = "pwm01_ksin02 pwm2_ksout2 pwm123_ksin3out0out1"/>
-	<function name = "rmii" groups = "rmii"/>
-	<function name = "sd0" groups = "sd0"/>
-	<function name = "sd1" groups = "sd1"/>
-	<function name = "sd2" groups = "sd2"/>
-	<function name = "sens0" groups = "sens0"/>
-	<function name = "sens1" groups = "sens1"/>
-	<function name = "smii" groups = "smii"/>
-	<function name = "spi0" groups = "spi0"/>
-	<function name = "spi1" groups = "spi1"/>
-	<function name = "key" groups = "key4x2"/>
-	<function name = "uart0" groups = "uart0"/>
-	<function name = "uart2" groups = "uart2 uart2_sd0"/>
-	<function name = "uart3" groups = "uart3"/>
-	<function name = "uart4" groups = "uart4"/>
-	<function name = "uart5" groups = "uart5_sd0"/>
-</functions>
-
-<pinctrl_mapping>
-	<mapping function = "lvds" boot_enable = "true"/>
-	<mapping function = "spi1" boot_enable = "true"/>
-	<mapping function = "sens1" boot_enable = "true"/>
-	<mapping function = "pwm" group = "pwm01_ksin02" boot_enable = "true"/>
-	<mapping function = "pwm" group = "pwm2_ksout2" boot_enable = "true"/>
-	<mapping function = "pwm" group = "pwm123_ksin3out0out1" boot_enable = "true"/>
-	<mapping function = "uart2" />
-
-	<mapping function = "sd0" group = "sd0" dev_name = "asoc-mmc0.0" state_name = "sd0_host"/>
-	<mapping function = "uart5" group = "uart5_sd0" dev_name = "asoc-mmc0.0" state_name = "serial_port"/>
-
-	<mapping function = "sd1" group = "sd1" dev_name = "asoc-mmc1.0" state_name = "sd1_wifi"/>
-</pinctrl_mapping>
