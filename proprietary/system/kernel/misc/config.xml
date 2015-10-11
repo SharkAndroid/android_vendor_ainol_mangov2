@@ -25,8 +25,8 @@
         <item name = "left" attr = "ro" type = "int[]" size = "9" value = "0;50;151;251;351;451;590;691;701"/>
         <item name = "right" attr = "ro" type = "int[]" size = "9" value = "0;150;250;350;450;550;690;700;1024"/>
         <item name = "values" attr = "ro" type = "int[]" size = "9" value = "102;139;115;114;0;0;0;0;103"/>
-		<item name = "filter_dep" attr = "ro" type = "int" size = "1" value = "5"/>        
-		<item name = "variance" attr = "ro" type = "int" size = "1" value = "50"/>
+        <item name = "filter_dep" attr = "ro" type = "int" size = "1" value = "5"/>        
+        <item name = "variance" attr = "ro" type = "int" size = "1" value = "50"/>
         <item name = "period" attr = "ro" type = "int" size = "1" value = "9"/>
     </top_item>
     <top_item name = "gsensor" attr = "ro">
@@ -39,7 +39,7 @@
         <item name = "module_name" attr = "ro" type = "str" size = "13" value = "camera_gc0308"/>
         <item name="h_mirror" attr="ro" type="int" size="1" value="0" /> 
         <item name="v_flip" attr="ro" type="int" size="1" value="0" />  
-	    <item name="avdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
+        <item name="avdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
         <item name="avdd_use_ldo" attr="ro" type="int" size="1" value="0" />  
         <item name="dvdd_use_ragulator" attr="ro" type="int" size="1" value="0" /> 
         <item name="dvdd_use_ldo" attr="ro" type="int" size="1" value="0" /> 
