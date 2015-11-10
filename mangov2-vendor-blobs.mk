@@ -153,7 +153,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/lib/libACT_EncAPI.so:system/lib/libACT_EncAPI \
     $(LOCAL_PATH)/system/lib/libACT_V4L2HAL.so:system/lib/libACT_V4L2HAL.so \
-    $(LOCAL_PATH)/system/lib/libOMX_Core.so:system/lib/libOMX_Core.so \
     $(LOCAL_PATH)/system/lib/libOMX.Action.Audio.Decoder.so:system/lib/libOMX.Action.Audio.Decoder.so \
     $(LOCAL_PATH)/system/lib/libOMX.Action.Image.Decoder.so:system/lib/libOMX.Action.Image.Decoder.so \
     $(LOCAL_PATH)/system/lib/libOMX.Action.Video.Camera.so:system/lib/libOMX.Action.Video.Camera.so \
