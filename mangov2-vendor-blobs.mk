@@ -67,10 +67,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/lib/id_jpg.so:system/lib/id_jpg.so \
     $(LOCAL_PATH)/system/lib/libACT_FD.so:system/lib/libACT_FD.so \
     $(LOCAL_PATH)/system/lib/libACT_ISP.so:system/lib/libACT_ISP.so \
-    $(LOCAL_PATH)/system/lib/libalc.so:system/lib/libalc.so \
     $(LOCAL_PATH)/system/lib/libbacklight.so:system/lib/libbacklight.so \
     $(LOCAL_PATH)/system/lib/libimg_en.so:system/lib/libimg_en.so \
-    $(LOCAL_PATH)/system/lib/libion.so:system/lib/libion.so \
     $(LOCAL_PATH)/system/lib/libsub.so:system/lib/libsub.so \
     $(LOCAL_PATH)/system/lib/libvde_core.so:system/lib/libvde_core.so \
     $(LOCAL_PATH)/system/lib/vd_flv1.so:system/lib/vd_flv1.so \
