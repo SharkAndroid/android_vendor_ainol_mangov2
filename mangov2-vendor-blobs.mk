@@ -63,7 +63,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/kernel/misc/modules/udc.ko:system/kernel/misc/modules/udc.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vce_drv.ko:system/kernel/misc/modules/vce_drv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vde_drv.ko:system/kernel/misc/modules/vde_drv.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/wlan.ko:system/kernel/misc/modules/wlan.ko
+    $(LOCAL_PATH)/system/kernel/misc/modules/wlan.ko:system/kernel/misc/modules/wlan.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/xhci-hcd.ko:system/kernel/misc/modules/xhci-hcd.ko
 
 # Recovery
 PRODUCT_COPY_FILES += \
