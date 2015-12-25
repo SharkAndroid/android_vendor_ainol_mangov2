@@ -29,7 +29,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/kernel/misc/modules/act_vibrate.ko:system/kernel/misc/modules/act_vibrate.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/acts_hcd.ko:system/kernel/misc/modules/acts_hcd.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/adfus.ko:system/kernel/misc/modules/adfus.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/asix.ko:system/kernel/misc/modules/asix.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_adckeypad.ko:system/kernel/misc/modules/atc260x_adckeypad.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_audio.ko:system/kernel/misc/modules/atc260x_audio.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_cap_gauge.ko:system/kernel/misc/modules/atc260x_cap_gauge.ko \
@@ -45,7 +44,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/kernel/misc/modules/camera_drv.ko:system/kernel/misc/modules/camera_drv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/camera_gc0308.ko:system/kernel/misc/modules/camera_gc0308.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/camera_hi253.ko:system/kernel/misc/modules/camera_hi253.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/cifs.ko:system/kernel/misc/modules/cifs.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/ctp_ft5x06.ko:system/kernel/misc/modules/ctp_ft5x06.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/dummy_udc.ko:system/kernel/misc/modules/dummy_udc.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/dwc3.ko:system/kernel/misc/modules/dwc3.ko \
@@ -55,21 +53,40 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/kernel/misc/modules/gl5202_hdmi.ko:system/kernel/misc/modules/gl5202_hdmi.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/gl5202_tvout.ko:system/kernel/misc/modules/gl5202_tvout.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/gsensor_mc3210.ko:system/kernel/misc/modules/gsensor_mc3210.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/gspca_main.ko:system/kernel/misc/modules/gspca_main.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/mcs7830.ko:system/kernel/misc/modules/mcs7830.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/mmc_block.ko:system/kernel/misc/modules/mmc_block.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/mmc_core.ko:system/kernel/misc/modules/mmc_core.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/monitor.ko:system/kernel/misc/modules/monitor.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/option.ko:system/kernel/misc/modules/option.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/remotefs_inode.ko:system/kernel/misc/modules/remotefs_inode.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/rtl8150.ko:system/kernel/misc/modules/rtl8150.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/scsi_wait_scan.ko:system/kernel/misc/modules/scsi_wait_scan.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/sndrv.ko:system/kernel/misc/modules/sndrv.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/sr9700.ko:system/kernel/misc/modules/sr9700.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/stub.ko:system/kernel/misc/modules/stub.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/udc.ko:system/kernel/misc/modules/udc.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/usb_wwan.ko:system/kernel/misc/modules/usb_wwan.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vce_drv.ko:system/kernel/misc/modules/vce_drv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vde_drv.ko:system/kernel/misc/modules/vde_drv.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/wlan.ko:system/kernel/misc/modules/wlan.ko \
-    $(LOCAL_PATH)/system/kernel/misc/modules/xhci-hcd.ko:system/kernel/misc/modules/xhci-hcd.ko
+    $(LOCAL_PATH)/system/kernel/misc/modules/wlan.ko:system/kernel/misc/modules/wlan.ko
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/system/kernel/misc/modules/act_vibrate.ko:recovery/root/lib/modules/act_vibrate.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/acts_hcd.ko:recovery/root/lib/modules/acts_hcd.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_adckeypad.ko:recovery/root/lib/misc/modules/atc260x_adckeypad.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_audio.ko:recovery/root/lib/modules/atc260x_audio.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_onoff.ko:recovery/root/lib/modules/atc260x_onoff.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_power.ko:recovery/root/lib/modules/atc260x_power.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atc260x_rtc.ko:recovery/root/lib/modules/atc260x_rtc.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_backlight.ko:recovery/root/lib/modules/atv5202_backlight.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_de.ko:recovery/root/lib/modules/atv5202_de.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_fb.ko:recovery/root/lib/modules/atv5202_fb.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_lcd.ko:recovery/root/lib/modules/atv5202_lcd.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_mmc.ko:recovery/root/lib/modules/atv5202_mmc.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/atv5202_vout.ko:recovery/root/lib/modules/atv5202_vout.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/dwc3.ko:recovery/root/lib/modules/dwc3.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/dwc3-actions.ko:recovery/root/lib/modules/dwc3-actions.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/g_android.ko:recovery/root/lib/modules/g_android.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/galcore.ko:recovery/root/lib/modules/galcore.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/gl5202_hdmi.ko:recovery/root/lib/modules/gl5202_hdmi.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/gl5202_tvout.ko:recovery/root/lib/modules/gl5202_tvout.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/mmc_block.ko:recovery/root/lib/modules/mmc_block.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/mmc_core.ko:recovery/root/lib/modules/mmc_core.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/monitor.ko:recovery/root/lib/modules/monitor.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/sndrv.ko:recovery/root/lib/modules/sndrv.ko
