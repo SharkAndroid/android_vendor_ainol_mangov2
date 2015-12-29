@@ -56,11 +56,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system/kernel/misc/modules/mmc_block.ko:system/kernel/misc/modules/mmc_block.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/mmc_core.ko:system/kernel/misc/modules/mmc_core.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/monitor.ko:system/kernel/misc/modules/monitor.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/option.ko:system/kernel/misc/modules/option.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/remotefs_inode.ko:system/kernel/misc/modules/remotefs_inode.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/scsi_wait_scan.ko:system/kernel/misc/modules/scsi_wait_scan.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/sndrv.ko:system/kernel/misc/modules/sndrv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/stub.ko:system/kernel/misc/modules/stub.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/udc.ko:system/kernel/misc/modules/udc.ko \
+    $(LOCAL_PATH)/system/kernel/misc/modules/usb_wwan.ko:system/kernel/misc/modules/usb_wwan.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vce_drv.ko:system/kernel/misc/modules/vce_drv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/vde_drv.ko:system/kernel/misc/modules/vde_drv.ko \
     $(LOCAL_PATH)/system/kernel/misc/modules/wlan.ko:system/kernel/misc/modules/wlan.ko \
