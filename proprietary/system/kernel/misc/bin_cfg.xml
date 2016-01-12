@@ -10,7 +10,7 @@
         <attr name = "rw"/>
     </attrs>
     <top_item name = "lcd" attr = "ro">        
-        <item name = "backlight" attr = "ro" type = "int[]" size = "6" value = "1;100000;1;25;500;250"/>
+        <item name = "backlight" attr = "ro" type = "int[]" size = "6" value = "0;100000;0;345;500;380"/>
         <item name = "base_info" attr = "ro" type = "int[]" size = "11" value = "72000;60;0;1280;800;30;40;80;5;10;18"/>
         <item name = "signal_info" attr = "ro" type = "int[]" size = "4" value = "0;0;0;0"/> 
         <item name = "lvds_info" attr = "ro" type = "int[]" size = "4" value = "0;0;0;0"/>
