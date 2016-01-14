@@ -1,18 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configs>
-    <top_item name = "snd" DISP_EN = "snd" DISP_CH = "音频配置" DISP_TW = "音頻設置">
+		<!--DISP_EN , DISP_CH , DISP_TW : 英简繁注释-->
+		<!--operate :  两种取值 , SINGLE和EDIT , SINGLE代表由用户选择 , 表现在界面上就是下拉单(combobox) , EDIT就是用户可编辑-->
+		<!--DISP_MODE:SUBITEM的初始显示模式
+		    DISP_MODE="contract" (子项收起来) 
+		    DISP_MODE="expand" (子项展开)
+		    如果没指定，则默认为展开。
+		-->
+		<!--RANGE：格式 min-max(step), min-max表明min到max之间的数据有效,Step表明min-max中step步进的值有效。若只有min-max,则表明步长为１。
+					例如：0-100（10） 表示0 10 20 30 40 50 60 70 80 90 100为有效值。4-6表明 4，5，6有效。
+					也可以直接列出可选项: RANGE = "1,10,20,50,55,100" , RANGE="on,off"
+					可以混合写 , 例如RANGE = "2,45,100-200(50),300,400-405"
+		-->		
+		<!--len : 用来限制 EDIT的长度(用户可输入最长的字符串)-->
+		<!-- readonly :  取值true和false , 界面是否允许修改该项 , 不写该属性默认可改-->
+		<!-- 下面的节点的层级结构 , 跟config.xml一样  -->
+		<!--注：
+		    item name的字符个数最大值为128
+            DISP_XX的字符个数最大值为256
+            DISP_DETAIL_XX的字符个数最大值为512	
+		-->
+
+	<top_item name = "snd" DISP_EN = "snd" DISP_CH = "音频配置" DISP_TW = "音頻設置">
             <item name = "ddd" operate = "SINGLE" RANGE = "0-1" DISP_EN = "direct_drive" DISP_CH = "耳机的输出方式" DISP_TW = "耳機的輸出方式"  DISP_DETAIL_EN = "0:directly drive,1:not directly drive" DISP_DETAIL_CH = "0:直驱,1:非直驱" DISP_DETAIL_TW = "0:直驅,1:非直驅" />
             <item name = "channel" operate = "SINGLE" RANGE = "1-2" DISP_EN = "mic_channel" DISP_CH = "录音时麦克风个数" DISP_TW = "錄音時麥克風個數" />
-            <item name = "micgain" operate = "EDIT" RANGE = "0-25" DISP_EN = "mic_gain" DISP_CH = "录音增益设置" DISP_TW = "錄音增益設置" DISP_DETAIL_EN = "parameter range 0--25，the gain increases by 1.5dB，the gain is 19.5dB when parameter is 0" DISP_DETAIL_CH = "参数取值范围0--25，增益以1.5dB递增，参数取0时的增益为19.5dB" DISP_DETAIL_TW = "參數取值範圍0--25，增益以1.5dB遞增，參數取0時的增益為19.5dB" />    
+            <item name = "micgain" operate = "EDIT" RANGE = "0-25" DISP_EN = "mic_gain" DISP_CH = "录音增益设置" DISP_TW = "錄音增益設置" DISP_DETAIL_EN = "parameter range 0--25，the gain increases by 1.5dB，the gain is 19.5dB when parameter is 0" DISP_DETAIL_CH = "参数取值范围0--25，增益以1.5dB递增，参数取0时的增益为19.5dB" DISP_DETAIL_TW = "參數取值範圍0--25，增益以1.5dB遞增，參數取0時的增益為19.5dB" /> 	
             <item name = "detect_mode" operate = "SINGLE" RANGE = "0-1" DISP_EN = "detect_mode" DISP_CH = "耳机插拔检测模式" DISP_TW = "耳機插拔檢測模式" DISP_DETAIL_EN = "0:gpio polling；1:gpio interrupts;default:1" DISP_DETAIL_CH = "0：gpio轮询；1：gpio中断;默认为1" DISP_DETAIL_TW = "0：gpio輪詢；1：gpio中斷;默認為1" />
             <item name = "edlle" operate = "SINGLE" RANGE = "0-1" DISP_EN = "edlle" DISP_CH = "耳机检测的有效电平" DISP_TW = "耳機檢測的有效電平" DISP_DETAIL_EN = "0:high level is active;1:low level is active" DISP_DETAIL_CH = "0:是高电平有效;1:是低电平有效" DISP_DETAIL_TW = "0:是高電平有效;1:是低電平有效" />
-            <item name = "speaker_gain" operate = "EDIT" RANGE = "0-255" DISP_EN = "speaker_gain" DISP_CH = "喇叭音量等级设置" DISP_TW = "喇叭音量等級設置" DISP_DETAIL_EN = "parameter range 0--255，[volume level，value]:[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_CH = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_TW = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" />     
-            <item name = "earphone_gain" operate = "EDIT" RANGE = "0-255" DISP_EN = "earphone_gain" DISP_CH = "耳机音量等级设置" DISP_TW = "耳機音量等級設置" DISP_DETAIL_EN = "parameter range 0--255，[volume level，value]:[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_CH = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_TW = "取值范圍0--255，[音量等級，對應值]：[15,190]、[14,182]、[13,175]、[12,167]" />   
-    </top_item> 
+            <item name = "speaker_gain" operate = "EDIT" RANGE = "0-255" DISP_EN = "speaker_gain" DISP_CH = "喇叭音量等级设置" DISP_TW = "喇叭音量等級設置" DISP_DETAIL_EN = "parameter range 0--255，[volume level，value]:[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_CH = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_TW = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" /> 	
+            <item name = "earphone_gain" operate = "EDIT" RANGE = "0-255" DISP_EN = "earphone_gain" DISP_CH = "耳机音量等级设置" DISP_TW = "耳機音量等級設置" DISP_DETAIL_EN = "parameter range 0--255，[volume level，value]:[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_CH = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]" DISP_DETAIL_TW = "取值范圍0--255，[音量等級，對應值]：[15,190]、[14,182]、[13,175]、[12,167]" /> 	
+    </top_item>	
 
     <top_item name = "adckey" DISP_EN = "adckey" DISP_CH = "adc按键配置" DISP_TW = "adc按鍵配置">
         <item name = "size" DISP_EN = "size" DISP_CH = "adc按键个数" DISP_TW = "adc按鍵個數" operate = "SINGLE" RANGE = "0-20" />
-        <item name = "left" DISP_EN = "left" DISP_CH = "adc值的下限" DISP_TW = "adc值的下限" operate = "SUBITEMEDIT">
+	 	<item name = "left" DISP_EN = "left" DISP_CH = "adc值的下限" DISP_TW = "adc值的下限" operate = "SUBITEMEDIT">
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 1" DISP_CH = "按键1分压值的下限" DISP_TW = "按鍵1分壓值的下限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 2" DISP_CH = "按键2分压值的下限" DISP_TW = "按鍵2分壓值的下限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 3" DISP_CH = "按键3分压值的下限" DISP_TW = "按鍵3分壓值的下限" />
@@ -22,8 +43,8 @@
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 7" DISP_CH = "按键7分压值的下限" DISP_TW = "按鍵7分壓值的下限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 8" DISP_CH = "按键8分压值的下限" DISP_TW = "按鍵8分壓值的下限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL low limit of Button 9(all buttons up)" DISP_CH = "按键9(全部抬起)分压值的下限" DISP_TW = "按鍵9(全部抬起)分壓值的下限" />
-        </item>
-        <item name = "right" DISP_EN = "right" DISP_CH = "adc值的上限" DISP_TW = "adc值的上限" operate = "SUBITEMEDIT">
+		</item>
+	 	<item name = "right" DISP_EN = "right" DISP_CH = "adc值的上限" DISP_TW = "adc值的上限" operate = "SUBITEMEDIT">
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 1" DISP_CH = "按键1分压值的上限" DISP_TW = "按鍵1分壓值的上限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 2" DISP_CH = "按键2分压值的上限" DISP_TW = "按鍵2分壓值的上限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 3" DISP_CH = "按键3分压值的上限" DISP_TW = "按鍵3分壓值的上限" />
@@ -33,8 +54,8 @@
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 7" DISP_CH = "按键7分压值的上限" DISP_TW = "按鍵7分壓值的上限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 8" DISP_CH = "按键8分压值的上限" DISP_TW = "按鍵8分壓值的上限" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "VOL high limit of Button 9(all buttons up)" DISP_CH = "按键9(全部抬起)分压值的上限" DISP_TW = "按鍵9(全部抬起)分壓值的上限" />
-        </item>
-        <item name = "values" DISP_EN = "values" DISP_CH = "adc的按键映射值" DISP_TW = "adc的按鍵映射值" operate = "SUBITEMEDIT">
+		</item>
+	 	<item name = "values" DISP_EN = "values" DISP_CH = "adc的按键映射值" DISP_TW = "adc的按鍵映射值" operate = "SUBITEMEDIT">
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 1" DISP_CH = "按键1的按键映射" DISP_TW = "按鍵1的按鍵映射" DISP_DETAIL_EN = "default is HOME key" DISP_DETAIL_CH = "默认是HOME键" DISP_DETAIL_TW = "默認是HOME鍵" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 2" DISP_CH = "按键2的按键映射" DISP_TW = "按鍵2的按鍵映射" DISP_DETAIL_EN = "default is MENU key" DISP_DETAIL_CH = "默认是MENU键" DISP_DETAIL_TW = "默認是MENU鍵" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 3" DISP_CH = "按键3的按键映射" DISP_TW = "按鍵3的按鍵映射" DISP_DETAIL_EN = "default is VOL+ key" DISP_DETAIL_CH = "默认是VOL+键" DISP_DETAIL_TW = "默認是VOL+鍵" />
@@ -44,7 +65,7 @@
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 7" DISP_CH = "按键7的按键映射" DISP_TW = "按鍵7的按鍵映射" DISP_DETAIL_EN = "default is unused" DISP_DETAIL_CH = "默认是保留不用的" DISP_DETAIL_TW = "默認是保留不用的" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 8" DISP_CH = "按键8的按键映射" DISP_TW = "按鍵8的按鍵映射" DISP_DETAIL_EN = "default is unused" DISP_DETAIL_CH = "默认是保留不用的" DISP_DETAIL_TW = "默認是保留不用的" />
             <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_EN = "the key mapping of button 9" DISP_CH = "按键9的按键映射" DISP_TW = "按鍵9的按鍵映射" DISP_DETAIL_EN = "default is KEY_UP key" DISP_DETAIL_CH = "默认是KEY_UP键" DISP_DETAIL_TW = "默認是KEY_UP鍵" />
-        </item>
+		</item>
         <item name = "filter_dep" DISP_EN = "filter_dep" DISP_CH = "滤波时需要采集的adc值个数" DISP_TW = "濾波時需要採集的adc值個數" operate = "EDIT" RANGE = "0-0xffff" />
         <item name = "variance" DISP_EN = "variance" DISP_CH = "滤波的误差精度" DISP_TW = "濾波的誤差精度" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_EN = "range of ADC value" DISP_DETAIL_CH = "ADC值波动的范围" DISP_DETAIL_TW = "ADC值波動的範圍" />
         <item name = "period" DISP_EN = "period" DISP_CH = "轮询间隔时间" DISP_TW = "輪詢間隔時間" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_EN = "unit:ms" DISP_DETAIL_CH = "单位：ms" DISP_DETAIL_TW = "單位：ms" />
@@ -58,10 +79,10 @@
             <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "calibration value of X-axis" DISP_CH = "X轴校准值" DISP_TW = "X轴校准值" />     
             <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "calibration value of Y-axis" DISP_CH = "Y轴校准值" DISP_TW = "Y軸校準值" />
             <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "calibration value of Z-axis" DISP_CH = "Z轴校准值" DISP_TW = "Z軸校準值" />   
-        </item> 
-    </top_item> 
+        </item>	
+    </top_item>	
 
-    <top_item name = "cameraf" DISP_EN = "camera(front)" DISP_CH = "前置摄像头配置" DISP_TW = "前置攝像頭配置">
+	<top_item name = "cameraf" DISP_EN = "camera(front)" DISP_CH = "前置摄像头配置" DISP_TW = "前置攝像頭配置">
         <item name = "module_name" DISP_EN = "module_name" DISP_CH = "模组名称" DISP_TW = "模組名稱" operate = "EDIT" len = "16" DISP_DETAIL_EN = "the name of drive ic which used by front camera" DISP_DETAIL_CH = "前置摄像头使用的驱动ic名称，根据ic名称填写字符串即可" DISP_DETAIL_TW = "前置攝像頭使用的驅動ic名稱，根據ic名稱填寫字符串即可" />
         <item name = "h_mirror" DISP_EN = "h_mirror" DISP_CH = "界面是否需要左右镜像" DISP_TW = "界面是否需要左右鏡像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:not need;1:need" DISP_DETAIL_CH = "0：不需要；1：需要" DISP_DETAIL_TW = "0：不需要；1：需要" />
         <item name = "v_flip" DISP_EN = "v_flip" DISP_CH = "界面是否需要镜像上下镜像" DISP_TW = "界面是否需要鏡像上下鏡像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:not need;1:need" DISP_DETAIL_CH = "0：不需要；1：需要" DISP_DETAIL_TW = "0：不需要；1：需要" />
@@ -73,7 +94,7 @@
         <item name = "dovdd_use_ldo" DISP_EN = "dovdd_use_ldo" DISP_CH = "dovdd是否使用ldo供电" DISP_TW = "dovdd是否使用ldo供電" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "don't use LDO to supply power for dovdd;1:use LDO to supply power for dovdd" DISP_DETAIL_CH = "0：dovdd不使用ldo供电；1：dovdd使用ldo供电" DISP_DETAIL_TW = "0：dovdd不使用ldo供電；1：dovdd使用ldo供電" />
     </top_item>
 
-    <top_item name = "camerab" DISP_EN = "camera(back)" DISP_CH = "后置摄像头配置" DISP_TW = "後置攝像頭配置">
+	<top_item name = "camerab" DISP_EN = "camera(back)" DISP_CH = "后置摄像头配置" DISP_TW = "後置攝像頭配置">
         <item name = "module_name" DISP_EN = "module_name" DISP_CH = "模组名称" DISP_TW = "模組名稱" operate = "EDIT" len = "16"  DISP_DETAIL_EN = "the name of drive ic which used by rear camera" DISP_DETAIL_CH = "后置摄像头使用的驱动ic名称，根据ic名称填写字符串即可" DISP_DETAIL_TW = "後置攝像頭使用的驅動ic名稱，根據ic名稱填寫字符串即可" />
         <item name = "h_mirror" DISP_EN = "h_mirror" DISP_CH = "界面是否需要左右镜像" DISP_TW = "界面是否需要左右鏡像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:not need;1:need" DISP_DETAIL_CH = "0：不需要；1：需要" DISP_DETAIL_TW = "0：不需要；1：需要" />
         <item name = "v_flip" DISP_EN = "v_flip" DISP_CH = "界面是否需要镜像上下镜像" DISP_TW = "界面是否需要鏡像上下鏡像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:not need;1:need" DISP_DETAIL_CH = "0：不需要；1：需要" DISP_DETAIL_TW = "0：不需要；1：需要" />
@@ -86,7 +107,7 @@
         <item name = "ext_dcdc" DISP_EN = "ext_dcdc" DISP_CH = "是否存在外部DCDC充电控制电路" DISP_TW = "是否存在外部DCDC充電控制電路" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:don't not exist external DCDC charging circuit in hardware;1:exist external DCDC charging circuit in hardware" DISP_DETAIL_CH = "0：表示硬件上不存在外部DCDC充电控制电路；1：表示硬件上存在外部DCDC充电控制电路" DISP_DETAIL_TW = "0：表示硬件上不存在外部DCDC充電控制電路；1：表示硬件上存在外部DCDC充電控制電路" />        
         <item name = "backlight_on_current" DISP_EN = "backlight_on_current" DISP_CH = "开背光时的充电电流设置" DISP_TW = "開背光時的充電電流設置" operate = "EDIT" RANGE = "0-0xff" DISP_DETAIL_EN = "unit:100mA" DISP_DETAIL_CH = "单位：100mA" DISP_DETAIL_TW = "單位：100mA" />
         <item name = "backlight_off_current" DISP_EN = "backlight_off_current" DISP_CH = "关背光时的充电电流设置" DISP_TW = "關背光時的充電電流設置" operate = "EDIT" RANGE = "0-0xff" DISP_DETAIL_EN = "unit:100mA" DISP_DETAIL_CH = "单位：100mA" DISP_DETAIL_TW = "單位：100mA" />
-    </top_item> 
+    </top_item>	
 
     <top_item name = "hdmi" DISP_EN = "hdmi" DISP_CH = "hdmi配置" DISP_TW = "hdmi配置">
         <item name = "package" DISP_EN = "package" DISP_CH = "芯片封装" DISP_TW = "芯片封裝" operate = "EDIT" len = "16" DISP_DETAIL_EN = "config with ic package" DISP_DETAIL_CH = "根据芯片的封装配置" DISP_DETAIL_TW = "根據芯片的封裝配置" />

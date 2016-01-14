@@ -1,18 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configs>
-    <top_item name = "lcd" DISP_EN = "lcd" DISP_CH = "LCD配置" DISP_TW = "LCD配置">
-        <item name = "backlight" DISP_EN = "backlight" DISP_CH ="背光参数配置" DISP_TW = "背光參數配置" operate = "SUBITEMEDIT">
-            <SUB operate = "SINGLE" RANGE = "0-3" DISP_EN = "PWM number of backlight" DISP_CH = "背光使用的PWM编号" DISP_TW = "背光使用的PWM編號" DISP_DETAIL_EN = "optionalPWM0--PWM3" DISP_DETAIL_CH = "可选PWM0--PWM3" DISP_DETAIL_TW = "可選PWM0--PWM3" />
-            <SUB operate = "EDIT" RANGE = "0x00000000-0x0005B8D8" DISP_EN = "PWM frequency(Hz)" DISP_CH = "PWM频率(Hz)" DISP_TW = "PWM頻率(Hz)" />
-            <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "PWM effective level" DISP_CH = "PWM有效电平" DISP_TW = "PWM有效電平" DISP_DETAIL_EN = "1:high is active;0:low is active" DISP_DETAIL_CH = "1:高有效;0:低有效" DISP_DETAIL_TW = "1:高有效;0:低有效" />
-            <SUB operate = "EDIT" RANGE = "0-1023" DISP_EN = "min backlight value that drive support" DISP_CH = "驱动可支持的最小背光值" DISP_TW = "驅動可支持的最小背光值" DISP_DETAIL_EN = "minimum value can be set to 0" DISP_DETAIL_CH = "最小值可以设置为0" DISP_DETAIL_TW = "最小值可以設置爲0" />
+		<!--DISP_EN , DISP_CH ,DISP_TW : 英简繁注释-->
+		<!--operate :  两种取值 , SINGLE和EDIT , SINGLE代表由用户选择 , 表现在界面上就是下拉单(combobox) , EDIT就是用户可编辑-->
+		<!--DISP_MODE:SUBITEM的初始显示模式
+		    DISP_MODE="contract" (子项收起来) 
+		    DISP_MODE="expand" (子项展开)
+		    如果没指定，则默认为展开。
+		-->
+		<!--RANGE：格式 min-max(step), min-max表明min到max之间的数据有效,Step表明min-max中step步进的值有效。若只有min-max,则表明步长为１。
+					例如：0-100（10） 表示0 10 20 30 40 50 60 70 80 90 100为有效值。4-6表明 4，5，6有效。
+					也可以直接列出可选项: RANGE = "1,10,20,50,55,100" , RANGE="on,off"
+					可以混合写 , 例如RANGE = "2,45,100-200(50),300,400-405"
+		-->		
+		<!--len : 用来限制 EDIT的长度(用户可输入最长的字符串)-->
+		<!-- readonly :  取值true和false , 界面是否允许修改该项 , 不写该属性默认可改-->
+		<!-- 下面的节点的层级结构 , 跟bin_config.xml一样  -->
+		<!--注：
+		    item name的字符个数最大值为128
+            DISP_XX的字符个数最大值为256
+            DISP_DETAIL_XX的字符个数最大值为512	
+		-->
+		
+		
+	<top_item name = "lcd" DISP_EN = "lcd" DISP_CH = "LCD配置" DISP_TW = "LCD配置">
+	    <item name = "backlight" DISP_EN = "backlight" DISP_CH ="背光参数配置" DISP_TW = "背光參數配置" operate = "SUBITEMEDIT">
+	    	<SUB operate = "SINGLE" RANGE = "0-3" DISP_EN = "PWM number of backlight" DISP_CH = "背光使用的PWM编号" DISP_TW = "背光使用的PWM編號" DISP_DETAIL_EN = "optionalPWM0--PWM3" DISP_DETAIL_CH = "可选PWM0--PWM3" DISP_DETAIL_TW = "可選PWM0--PWM3" />
+	        <SUB operate = "EDIT" RANGE = "0x00000000-0x0005B8D8" DISP_EN = "PWM frequency(Hz)" DISP_CH = "PWM频率(Hz)" DISP_TW = "PWM頻率(Hz)" />
+	        <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "PWM effective level" DISP_CH = "PWM有效电平" DISP_TW = "PWM有效電平" DISP_DETAIL_EN = "1:high is active;0:low is active" DISP_DETAIL_CH = "1:高有效;0:低有效" DISP_DETAIL_TW = "1:高有效;0:低有效" />
+	        <SUB operate = "EDIT" RANGE = "0-1023" DISP_EN = "min backlight value that drive support" DISP_CH = "驱动可支持的最小背光值" DISP_TW = "驅動可支持的最小背光值" DISP_DETAIL_EN = "minimum value can be set to 0" DISP_DETAIL_CH = "最小值可以设置为0" DISP_DETAIL_TW = "最小值可以設置爲0" />
             <SUB operate = "EDIT" RANGE = "0-1023" DISP_EN = "max backlight value that drive support" DISP_CH = "驱动可支持的最大背光值" DISP_TW = "驅動可支持的最大背光值" DISP_DETAIL_EN = "maxmum value can be set to 1023" DISP_DETAIL_CH = "最大值可以设置为1023" DISP_DETAIL_TW = "最大值可以設置爲1023" />
-            <SUB operate = "EDIT" RANGE = "0-1023" DISP_EN = "default value of backlight when start up" DISP_CH = "开机启动时的默认背光值" DISP_TW = "開機啓動時的默認背光值" DISP_DETAIL_EN = "default value should be between minimum and maximum" DISP_DETAIL_CH = "默认背光值应该在最小最大值之间" DISP_DETAIL_TW = "默認背光值應該在最小最大值之間" /> 
-        </item>
-        <item name = "base_info" DISP_EN = "base_info" DISP_CH ="LCD基本参数配置" DISP_TW ="LCD基本參數配置" operate = "SUBITEMEDIT">
-            <SUB operate = "EDIT" RANGE = "0-0xffffffff" DISP_EN = "LCD frequency(kHz)" DISP_CH = "LCD频率(kHz)" DISP_TW = "LCD頻率(kHz)" />
-            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "frame rate(Hz)" DISP_CH = "帧率(Hz)" DISP_TW = "幀率(Hz)" />  
-            <SUB operate = "SINGLE" RANGE = "0-2" DISP_EN = "RGB bit width" DISP_CH = "RGB位宽" DISP_TW = "RGB位寬"  DISP_DETAIL_EN = "0:RGB888 paralle;1:RGB666 paralle;2:RGB565 parelle" DISP_DETAIL_CH = "0:RGB888并行;1:RGB666并行;2:RGB565并行" DISP_DETAIL_TW = "0:RGB888幷行;1:RGB666幷行;2:RGB565幷行" />   
+            <SUB operate = "EDIT" RANGE = "0-1023" DISP_EN = "default value of backlight when start up" DISP_CH = "开机启动时的默认背光值" DISP_TW = "開機啓動時的默認背光值" DISP_DETAIL_EN = "default value should be between minimum and maximum" DISP_DETAIL_CH = "默认背光值应该在最小最大值之间" DISP_DETAIL_TW = "默認背光值應該在最小最大值之間" />	
+		</item>
+		<item name = "base_info" DISP_EN = "base_info" DISP_CH ="LCD基本参数配置" DISP_TW ="LCD基本參數配置" operate = "SUBITEMEDIT">
+		    <SUB operate = "EDIT" RANGE = "0-0xffffffff" DISP_EN = "LCD frequency(kHz)" DISP_CH = "LCD频率(kHz)" DISP_TW = "LCD頻率(kHz)" />
+		    <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "frame rate(Hz)" DISP_CH = "帧率(Hz)" DISP_TW = "幀率(Hz)" />	
+		    <SUB operate = "SINGLE" RANGE = "0-2" DISP_EN = "RGB bit width" DISP_CH = "RGB位宽" DISP_TW = "RGB位寬"  DISP_DETAIL_EN = "0:RGB888 paralle;1:RGB666 paralle;2:RGB565 parelle" DISP_DETAIL_CH = "0:RGB888并行;1:RGB666并行;2:RGB565并行" DISP_DETAIL_TW = "0:RGB888幷行;1:RGB666幷行;2:RGB565幷行" />	
             <SUB operate = "EDIT" RANGE = "0-0x800" DISP_EN = "resolution width(pixel)" DISP_CH = "分辨率宽度(pixel)" DISP_TW = "分辨率寬度(pixel)" />
             <SUB operate = "EDIT" RANGE = "0-0x800" DISP_EN = "resolution height(pixel)" DISP_CH = "分辨率高度(pixel)" DISP_TW = "分辨率高度(pixel)" />
             <SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_EN = "Hsync pulse width(dclk)" DISP_CH = "横向同步信号宽度(dclk)" DISP_TW = "橫向同步信號寬度(dclk)" />
@@ -20,27 +42,27 @@
             <SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_EN = "HBP(dclk)" DISP_CH = "横向后沿(dclk)" DISP_TW = "橫向後沿(dclk)" />
             <SUB operate = "EDIT" RANGE = "0-0x1ff" DISP_EN = "Vsync pulse width(hsync)" DISP_CH = "纵向同步信号宽度(hsync)" DISP_TW = "纵向同步信号宽度(hsync)" />
             <SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_EN = "VFP(hsync)" DISP_CH = "纵向前沿(hsync)" DISP_TW = "縱向前沿(hsync)" />
-            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "VBP(hsync)" DISP_CH = "纵向后沿(hsync)" DISP_TW = "縱向後沿(hsync)" />       
-        </item>         
-        <item name = "signal_info" DISP_EN = "signal_info" DISP_CH ="LCD信号配置" DISP_TW ="LCD信號配置" operate = "SUBITEMEDIT">
-            <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "hsync effective voltage" DISP_CH = "行同步有效电平" DISP_TW = "行同步有效電平" DISP_DETAIL_EN = "0:low voltage blanking time,high voltage effective time;1:high voltage blanking time,low voltage effective time" DISP_DETAIL_CH = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期" DISP_DETAIL_TW = "0:低電平消隱期,高電平有效期;1:高電平消隱期,低電平有效期" />
-            <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "vsync effective voltage" DISP_CH = "场同步有效电平" DISP_TW = "場同步有效電平" DISP_DETAIL_EN = "0:low voltage blanking time,high voltage effective time;1:high voltage blanking time,low voltage effective time" DISP_DETAIL_CH = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期" DISP_DETAIL_TW = "0:低電平消隱期,高電平有效期;1:高電平消隱期,低電平有效期" />      
-            <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "whether effective in rising edge or falling edge" DISP_CH = "时钟DCLK上升沿下降沿有效" DISP_TW = "時鐘DCLK上升沿下降沿有效" DISP_DETAIL_EN = "0:falling edge active;1:rising edge active" DISP_DETAIL_CH = "0:下降沿有效;1:上升沿有效" DISP_DETAIL_TW = "0:下降沿有效;1:上升沿有效" />    
-            <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "DATA enable voltage" DISP_CH = "数据使能有效电平" DISP_TW = "數據使能有效電平" DISP_DETAIL_EN = "0:high active;1:low active" DISP_DETAIL_CH = "0:高电平有效;1:低电平有效" DISP_DETAIL_TW = "0:高電平有效;1:低電平有效" />          
-        </item>
-        <item name = "lvds_info" DISP_EN = "lvds_info" DISP_CH ="lvds接口配置" DISP_TW ="lvds接口配置" operate = "SUBITEMEDIT">
+            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_EN = "VBP(hsync)" DISP_CH = "纵向后沿(hsync)" DISP_TW = "縱向後沿(hsync)" />				
+		</item>			
+		<item name = "signal_info" DISP_EN = "signal_info" DISP_CH ="LCD信号配置" DISP_TW ="LCD信號配置" operate = "SUBITEMEDIT">
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "hsync effective voltage" DISP_CH = "行同步有效电平" DISP_TW = "行同步有效電平" DISP_DETAIL_EN = "0:low voltage blanking time,high voltage effective time;1:high voltage blanking time,low voltage effective time" DISP_DETAIL_CH = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期" DISP_DETAIL_TW = "0:低電平消隱期,高電平有效期;1:高電平消隱期,低電平有效期" />
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "vsync effective voltage" DISP_CH = "场同步有效电平" DISP_TW = "場同步有效電平" DISP_DETAIL_EN = "0:low voltage blanking time,high voltage effective time;1:high voltage blanking time,low voltage effective time" DISP_DETAIL_CH = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期" DISP_DETAIL_TW = "0:低電平消隱期,高電平有效期;1:高電平消隱期,低電平有效期" />	   
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "whether effective in rising edge or falling edge" DISP_CH = "时钟DCLK上升沿下降沿有效" DISP_TW = "時鐘DCLK上升沿下降沿有效" DISP_DETAIL_EN = "0:falling edge active;1:rising edge active" DISP_DETAIL_CH = "0:下降沿有效;1:上升沿有效" DISP_DETAIL_TW = "0:下降沿有效;1:上升沿有效" />	   
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "DATA enable voltage" DISP_CH = "数据使能有效电平" DISP_TW = "數據使能有效電平" DISP_DETAIL_EN = "0:high active;1:low active" DISP_DETAIL_CH = "0:高电平有效;1:低电平有效" DISP_DETAIL_TW = "0:高電平有效;1:低電平有效" />		    
+		</item>
+		<item name = "lvds_info" DISP_EN = "lvds_info" DISP_CH ="lvds接口配置" DISP_TW ="lvds接口配置" operate = "SUBITEMEDIT">
             <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "output mapping mode" DISP_CH = "输出映射表选择" DISP_TW = "輸出映射表選擇" DISP_DETAIL_EN = "refer to IC spec" DISP_DETAIL_CH = "0-1代表什么，详看主控IC SPEC" DISP_DETAIL_TW = "0-1代表什麽，詳看主控IC SPEC" />
             <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "mirror mode" DISP_CH = "镜像选择" DISP_TW = "鏡像選擇" DISP_DETAIL_EN = "refer to IC spec" DISP_DETAIL_CH = "0-1代表什么，详看主控IC SPEC" DISP_DETAIL_TW = "0-1代表什麽，詳看主控IC SPEC" />
             <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "odd PART channel polarity" DISP_CH = "奇通道时钟是否翻转" DISP_TW = "奇通道時鐘是否翻轉" DISP_DETAIL_EN = "0:normal;1:polar" DISP_DETAIL_CH = "0:不翻转;1:翻转" DISP_DETAIL_TW = "0:不翻轉;1:翻轉" />
             <SUB operate = "SINGLE" RANGE = "0-1" DISP_EN = "even PART channel polarity" DISP_CH = "偶通道时钟是否翻转" DISP_TW = "偶通道時鐘是否翻轉" DISP_DETAIL_EN = "0:normal;1:polar" DISP_DETAIL_CH = "0:不翻转;1:翻转" DISP_DETAIL_TW = "0:不翻轉;1:翻轉" />
-        </item>
-    </top_item>     
-    <top_item name = "charge" DISP_EN = "charge" DISP_CH = "低电配置" DISP_TW = "低電配置">
+		</item>
+	</top_item>		
+	<top_item name = "charge" DISP_EN = "charge" DISP_CH = "低电配置" DISP_TW = "低電配置">
         <item name = "gauge_mode" DISP_EN = "gauge_mode" DISP_CH = "软硬电量计选择" DISP_TW = "軟硬電量計選擇" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_EN = "0:soft electricity meter;1:hard electricity meter" DISP_DETAIL_CH = "0：使用软件电量计；1：使用硬件电量计" DISP_DETAIL_TW = "0：使用軟件電量計；1：使用硬件電量計" />
         <item name = "low_power" DISP_EN = "low_power" DISP_CH = "低电门槛百分比配置" DISP_TW = "低電門檻百分比配置" operate = "EDIT" RANGE = "0-100" DISP_DETAIL_EN = "eg:value is 7 denote that it will shutoff when capacity is less than 7% without usb and adapter" DISP_DETAIL_CH = "示例：值为7时表示，如果不插usb、adapter，开机检查电量低于7%，则关机。" DISP_DETAIL_TW = "示例：值爲7時表示，如果不插usb、adapter，開機檢查電量低于7%，則關機。" />
-    </top_item> 
+    </top_item>	
     <top_item name = "gague" DISP_EN = "config of electricity meter" DISP_CH = "电量计配置" DISP_TW = "電量計配置">
-        <item name = "parameter" DISP_MODE="contract" DISP_EN = "parameter" DISP_CH = "电量计初始化参数" DISP_TW = "電量計初始化參數" operate = "SUBITEMEDIT" DISP_DETAIL_EN = "This parameter will take effects on time-consuming and curve of the electricity meter when it is charging or discharging.When you use a new type battery,please ask the the electricity meter vendor to measure and tell you the value of this parameter.And then you should update it. " DISP_DETAIL_CH = "此参数会影响电量计充/放电曲线及充/放电时长。更换不同型号电池时，需要找电量计厂家进行参数测量，并更新此参数配置。" DISP_DETAIL_TW = "此參數會影響電量計充/放電曲線及充/放電時長。更換不同型號電池時，需要找電量計廠家進行參數測量，並更新此參數配置。" />  
+        <item name = "parameter" DISP_MODE="contract" DISP_EN = "parameter" DISP_CH = "电量计初始化参数" DISP_TW = "電量計初始化參數" operate = "SUBITEMEDIT" DISP_DETAIL_EN = "This parameter will take effects on time-consuming and curve of the electricity meter when it is charging or discharging.When you use a new type battery,please ask the the electricity meter vendor to measure and tell you the value of this parameter.And then you should update it. " DISP_DETAIL_CH = "此参数会影响电量计充/放电曲线及充/放电时长。更换不同型号电池时，需要找电量计厂家进行参数测量，并更新此参数配置。" DISP_DETAIL_TW = "此參數會影響電量計充/放電曲線及充/放電時長。更換不同型號電池時，需要找電量計廠家進行參數測量，並更新此參數配置。" />	
         <item name = "safe_power" DISP_EN = "safe_power" DISP_CH = "低电电量" DISP_TW = "低電電量" operate = "EDIT" RANGE = "0-100" DISP_DETAIL_EN = "eg:value is 5 denote that it will shutoff if capacity is 5% " DISP_DETAIL_CH = "示例：值为5时，是指实际电量是5%的时候关机。" DISP_DETAIL_TW = "示例：值爲5時，是指實際電量是5%的時候關機。" />
-    </top_item>  
+    </top_item>	 
 </configs>

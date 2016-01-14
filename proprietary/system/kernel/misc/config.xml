@@ -10,13 +10,15 @@
         <attr name = "rw"/>
     </attrs>
     <top_item name = "snd" attr = "ro">
-        <item name = "ddd" attr = "ro" type = "int" size = "1" value = "1"/>
-        <item name = "channel" attr = "ro" type = "int" size = "1" value = "1"/>
-        <item name = "micgain" attr = "ro" type = "int" size = "1" value = "25"/>
+        <item name = "direct_drive" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "mic_channel" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "mic_gain" attr = "ro" type = "int" size = "1" value = "25"/>
         <item name = "detect_mode" attr = "ro" type = "int" size = "1" value = "1"/>
         <item name = "active_level" attr = "ro" type = "int" size = "1" value = "0"/>
         <item name = "speaker_gain" attr = "ro" type = "int" size = "1" value = "183"/>
         <item name = "earphone_gain" attr = "ro" type = "int" size = "1" value = "183"/>
+        <item name = "speaker_channel_reverse" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "earphone_channel_reverse" attr = "ro" type = "int" size = "1" value = "0"/>
     </top_item>
     <top_item name = "adckey" attr = "ro">
         <item name = "size" attr = "ro" type = "int" size = "1" value = "9"/>
@@ -35,19 +37,19 @@
     </top_item>
     <top_item name="cameraf" attr="ro">
         <item name = "module_name" attr = "ro" type = "str" size = "13" value = "camera_gc0308"/>
-        <item name="h_mirror" attr="ro" type="int" size="1" value="0" />
-        <item name="v_flip" attr="ro" type="int" size="1" value="0" />
+        <item name="h_mirror" attr="ro" type="int" size="1" value="0" /> 
+        <item name="v_flip" attr="ro" type="int" size="1" value="0" />  
         <item name="avdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
-        <item name="avdd_use_ldo" attr="ro" type="int" size="1" value="0" />
-        <item name="dvdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
-        <item name="dvdd_use_ldo" attr="ro" type="int" size="1" value="0" />
-        <item name="dovdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
-        <item name="dovdd_use_ldo" attr="ro" type="int" size="1" value="0" />
+        <item name="avdd_use_ldo" attr="ro" type="int" size="1" value="0" />  
+        <item name="dvdd_use_ragulator" attr="ro" type="int" size="1" value="0" /> 
+        <item name="dvdd_use_ldo" attr="ro" type="int" size="1" value="0" /> 
+        <item name="dovdd_use_ragulator" attr="ro" type="int" size="1" value="0" />  
+        <item name="dovdd_use_ldo" attr="ro" type="int" size="1" value="0" />  
     </top_item>
     <top_item name="camerab" attr="ro">
         <item name = "module_name" attr = "ro" type = "str" size = "12" value = "camera_hi253"/>
-        <item name="h_mirror" attr="ro" type="int" size="1" value="0" />
-        <item name="v_flip" attr="ro" type="int" size="1" value="0" />
+        <item name="h_mirror" attr="ro" type="int" size="1" value="0" /> 
+        <item name="v_flip" attr="ro" type="int" size="1" value="0" />  
         <item name="gain_level" attr="ro" type="int" size="1" value="12"/>
     </top_item>
     <top_item name = "charger" attr = "ro">
@@ -64,11 +66,12 @@
         <item name = "backlight_on_vol_diff" attr = "ro" type = "int" size = "1" value = "350"/>
         <item name = "backlight_off_vol_diff" attr = "ro" type = "int" size = "1" value = "400"/>
         <item name = "support_adaptor_type" attr = "ro" type = "int" size = "1" value = "3"/>
-        <item name = "boot_cap_threshold"  attr = "ro" type = "int" size = "1" value = "3"/>
+        <item name = "boot_cap_threshold"  attr = "ro" type = "int" size = "1" value = "3"/>  
     </top_item>
    <top_item name="hdmi" attr="ro">
         <item name="package" attr="ro" type="str" size="3" value="bga" /> 
         <item name = "vids" attr = "ro" type = "int[]" size = "9" value = "16;31;4;19;34;33;32;5;20;30;29;15;14;74;18;17;22;21;15;14;1"/>
+        <item name = "hdcp_switch" attr = "ro" type = "int" size = "1" value = "0"/>
     </top_item> 
    <top_item name="ctp" attr="ro">
         <item name="sirq" attr="ro" type="int" size="1" value="0" /> 
@@ -79,10 +82,10 @@
         <item name="rotate" attr="ro" type="int" size="1" value="3" /> 
     </top_item>
     <top_item name="vibrate" attr="ro">
-        <item name="max_timeout" attr="ro" type="int" size="1" value="10000" />
-        <item name="min_timeout" attr="ro" type="int" size="1" value="100" />
+        <item name="max_timeout" attr="ro" type="int" size="1" value="10000" /> 
+        <item name="min_timeout" attr="ro" type="int" size="1" value="100" />    
     </top_item> 
     <top_item name="usb" attr="ro">
-        <item name="cfgf_serialnum" attr="ro" type="int" size="1" value="1" />
+        <item name="cfgf_serialnum" attr="ro" type="int" size="1" value="0" />  
     </top_item> 
 </configs>
